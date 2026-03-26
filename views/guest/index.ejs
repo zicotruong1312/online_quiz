@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tham gia trò chơi - Kể tên sức mạnh</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #2d3436; color: white;}
+        .container { background-color: #6c5ce7; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.4); width: 320px; border: 3px solid rgba(255, 255, 255, 0.1);}
+        input { width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 8px; font-size: 16px; box-sizing: border-box; font-weight: bold; text-align: center; color: #333;}
+        input:focus { outline: none; box-shadow: 0 0 5px white; }
+        button { width: 100%; padding: 15px; margin-top: 15px; background-color: #1dd1a1; border: none; border-radius: 8px; font-size: 18px; color: white; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.3);}
+        button:hover { background-color: #10ac84; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-top: 0; font-size: 30px; letter-spacing: 1px;">🎮 VÀO PHÒNG</h1>
+        <form action="/guest/join" method="POST">
+            <input type="text" name="pin" placeholder="Mã PIN phòng (VD: 123456)" autocomplete="off" required>
+            <input type="text" name="username" placeholder="Nick name của bạn" autocomplete="off" required>
+            <button type="submit">Tham Gia Cuộc Đua</button>
+        </form>
+    </div>
+</body>
+</html>

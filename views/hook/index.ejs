@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hook Dashboard - Bảng điều khiển chủ phòng</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f4f6f9; color: #333; }
+        .card { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        select, button { width: 100%; padding: 12px; margin-top: 15px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; }
+        select:focus { outline: none; border-color: #6c5ce7; box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);}
+        button { background-color: #6c5ce7; color: white; border: none; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        button:hover { background-color: #5b4bc4; box-shadow: 0 4px 6px rgba(108, 92, 231, 0.4); }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 style="color: #6c5ce7;">👋 Chào mừng Host (Hook)</h1>
+        <p>Chọn một bài Quiz bên dưới để tạo phòng thi đấu Gimkit trực tiếp cho cả lớp.</p>
+
+        <form action="/hook/create-room" method="POST">
+            <label for="quizId" style="font-weight: bold;">📚 Chọn bộ câu hỏi kiến thức:</label><br/>
+            <select name="quizId" id="quizId">
+                <% quizzes.forEach(function(quiz) { %>
+                    <option value="<%= quiz.id %>"><%= quiz.title %> (<%= quiz.questionCount %> câu)</option>
+                <% }); %>
+            </select>
+            <br>
+            <button type="submit">🚀 Tạo Bàn Chơi Mới</button>
+        </form>
+    </div>
+</body>
+</html>
